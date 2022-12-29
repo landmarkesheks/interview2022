@@ -92,11 +92,25 @@ Automate builds using build triggers.
 - Tell me about a time you had to write a script, you had a problem, you needed to find a solution, you wrote a script to solve the problem? 
   What was that situation and the script you wrote?
 --------------------------------------------------------------------------------------------------------------------------------
-
-
-I think you mentioned here also, you’ve done some work with, let me double check on your resume and make sure I’m not mistaking anything.
-Have you done any work with monitoring tools like Grafana, Prometheus, Elastic Search, New Relic, Data Dog, anything working with tools and dashboard to help build monitoring solutions?
-
+    some years ago before we started using new relic for monitoring our monolitic application, I created a script that monitors resources in our server
+    using bash shell scripting
+    
+    --Bash script
+    THRESHOLD=85
+    df -H | grep -vE '^Filesystem|tmpfs|cdrom' | awk '{ print $5 " " $1 }' | while read output;
+    do
+      echo $output
+      usep=$(echo $output | awk '{ print $1}' | cut -d'%' -f1  )
+      partition=$(echo $output | awk '{ print $2 }' )
+      if [ $usep -ge $THRESHOLD ]; then
+        echo "Running out of memory space \"$partition ($usep%)\" on $(hostname) as on $(date)" |
+         mail -s "Alert: Almost out of disk space $usep%" mylandmarktech@gmail.com
+      fi
+    done
+-----------------------------------------------------------------------------------------------------------------------------
+- Have you done any work with monitoring tools like Grafana, Prometheus, Elastic Search, New Relic, Data Dog, anything working with tools 
+  and dashboard to help build monitoring solutions?
+-------------------------------------------------------------------------------------------------------------------------
 Can you tell me a little bit of the work you did with that?
 Tell me the github workflows and events?
 How have you used github in your environment?
