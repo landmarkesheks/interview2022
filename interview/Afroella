@@ -3,7 +3,7 @@ DevOps Interview Questions.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 - In git, you can automate certain actions when the code merge or happens or when there is a push to origin. There are 3 types of triggers or hook?
 ----------------------------------------------------------------------------------------------------------------------------------------------
-Automate builds using build triggers.                  ------------------------------6
+Automate builds using build triggers.                  
 =====================================
     1. Timer [cronjob ] = build periodically  :
          run this job every mid night [database backup]  
