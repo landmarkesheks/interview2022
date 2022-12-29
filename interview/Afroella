@@ -1,21 +1,98 @@
 DevOps Interview Questions.
 
-Can you tell me what the differences between those 2 commands are?
+-------------------------------------------------------------------------------------------------------------------------------------------------
+- In git, you can automate certain actions when the code merge or happens or when there is a push to origin. There are 3 types of triggers or hook?
+----------------------------------------------------------------------------------------------------------------------------------------------
+Automate builds using build triggers.                  ------------------------------6
+=====================================
+    1. Timer [cronjob ] = build periodically  :
+         run this job every mid night [database backup]  
+         run this job every 2am [database backup] 
+       Started by timer
 
-In git, you can automate certain actions when the code merge or happens or when there is a push to origin. There are 3 types of triggers or hook. Do you k now what those triggers are? That will allow you to execute scripts when code is merged?
+    2. Changes in SCM via poll SCM  :
+         * * * * * Every minute Jenkins will check for changes in the src to trigger a build  
+         H * * * * Every hour Jenkins will check for changes in the src to trigger a build
+         Software builds 
+         application build and Deployment
+         Started by an SCM change
 
-We often hear about CI/CD. When someone talks about Continuous Integration, what does that mean to you and how do you define the term to people?
+    3. Changes in SCM via GitHub-webhook 
+         GitHub will notify Jenkins to trigger a build once there is a change in the scm [src]  
 
-In DevOps, there is a concept called shift left to reduce failures. Do you know what that concept means?
+        Jenkins Server url =  http://13.52.240.58:8080/
+        GitHub-webhook     =  http://13.52.240.58:8080/github-webhook/   
 
-In DevOps and Deployment practices, there is a practice called Blue Green deployment. Do you know what that is and can you explain that to me?
+         Software builds 
+         application build and Deployment
+         Started by GitHub push by legah2045 
 
-Have you spent anytime building CI/CD pipelines and if so, what is the most complex one you have built?
+         api call  
 
-You mentioned in your resume, your ability to ah, sorry, let me check it out here.
-Scripting or programming skills, have you done any work with Java, Python, Bash shell scripting or Pearl, any type of scripting language or light programming? 
+    4. Build other projects  
+         Upstrean project  
+           1. build & release  
 
-Tell me about a time you had to write a script, you had a problem, you needed to find a solution, you wrote a script to solve the problem? What was that situation and the script you wrote?
+           2. Downstream project 
+                 deploy2Tomcat
+-----------------------------------------------------------------------------------------------------
+- Do you know what those triggers are? That will allow you to execute scripts when code is merged?
+-------------------------------------------------------------------------------------------------
+    1. Changes in SCM via GitHub-webhook 
+         GitHub will notify Jenkins to trigger a build once there is a change in the scm [src]  
+
+        Jenkins Server url =  http://13.52.240.58:8080/
+        GitHub-webhook     =  http://13.52.240.58:8080/github-webhook/   
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+- We often hear about CI/CD. When someone talks about Continuous Integration, what does that mean to you and how do you define the term to people?
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+    1. CI is nothing but a software development practice where members of each team integrate their work daily using automation, they can test it every day and it 
+    reduces the problems because it can identify the problems earlier, so they can be fixed.. This will enable us to develop product that is  more stable. 
+
+    2. CD (Continuous deployment) automatically deploys every successful CI build directly into production without any manual steps. 
+
+-----------------------------------------------------------------------------------------------------------
+- In DevOps, there is a concept called shift left to reduce failures. Do you know what that concept means?
+------------------------------------------------------------------------------------------------------------
+
+    The term “shift left” refers to a practice in software development in which teams focus on quality, work on problem prevention instead of detection, 
+    and begin testing earlier than ever before. 
+    Shifting left requires two key DevOps practices: continuous testing and continuous deployment. Continuous testing involves automating tests 
+    and running those tests as early and often as possible, Continuous deployment automates the provisioning and deployment of new builds, 
+    enabling continuous testing to happen quickly and efficiently.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+- In DevOps and Deployment practices, there is a practice called Blue Green deployment. Do you know what that is and can you explain that to me?
+--------------------------------------------------------------------------------------------------------------------------------------------
+    In a blue/green deployment strategy  the old version of the application and
+    the new version get deployed at the same time. When both of these are deployed, users only have access to the
+    green; whereas, the blue is available to the QA team for test automation on a separate service. After
+    the new version has been tested and is signed off for release, the service is switched to the blue version with the
+    old green version being scaled down:
+
+-----------------------------------------------------------------------------------------------------
+- Have you spent anytime building CI/CD pipelines and if so, what is the most complex one you have built?
+-----------------------------------------------------------------------------------------------------
+    one of my cpomplex pipeline was when I have created a pipeline for
+    CP =  continous provisioning of our infrastructure using terraform
+    CI =  Continous integration using 
+          maven for validation, compilation, test and package.
+          sonaqube for code quality
+          nexus to backup our artifact
+    CD =  pipeline for deploying our application into kubernetes cluster ( kubectl apply -f by importing kubeconfig file in our jenkins server)
+    CM =  pipeline for deploying monitoring like prometheus and grafana using helm chart 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+- Scripting or programming skills, have you done any work with Java, Python, Bash shell scripting or Pearl, any type of scripting language or light programming? 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+    YES Bash shell script
+    
+------------------------------------------------------------------------------------------------------------------------------------------    
+- Tell me about a time you had to write a script, you had a problem, you needed to find a solution, you wrote a script to solve the problem? 
+  What was that situation and the script you wrote?
+--------------------------------------------------------------------------------------------------------------------------------
+
 
 I think you mentioned here also, you’ve done some work with, let me double check on your resume and make sure I’m not mistaking anything.
 Have you done any work with monitoring tools like Grafana, Prometheus, Elastic Search, New Relic, Data Dog, anything working with tools and dashboard to help build monitoring solutions?
