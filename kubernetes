@@ -25,3 +25,36 @@ What are your KPI meterics?
     2. Ensuring that Service-level agreements (SLA) for our applications meet a high goal of availability. Services should be online as much as possible, 
        which creates uptime goals as high as 99.999%, we achieve this by continous monitoring 
     3. Ensuring continous security in our environment
+    
+    
+ ----------------------------------
+1. CPU utilisation can cause endsuers to have intermitent access to the application, 
+------------------------------------
+so to 
+solve this problem will make use of HPA and metric server, so that our pod can scale when our CPU is reaching a cetain 
+percentage
+
+--------------------------------------
+2. Database is full, so it cannot persist data anymore?. 
+---------------------------------------
+we can use dynamo DP which is scalable instead of using RDS
+but if we are using rds we will have two rds server, one will be active and another will be passive incase one fails the other one will be triggered
+to work
+---------------------------------
+3. manifest file or helm chart has an issue that is pod on pending status. what is the problem
+------------------------------------------ 
+we can describe pending pods and looking at the events
+- this can be because of the pod back off because image is not available or the image is wrong
+- or the service is in different name space
+---------------------------------------
+4. pod affinity or node affinity :
+- selecting node that you that you want to place your pod ( so we label node) and deploy application to that node only
+-----------------------------
+5. Taint on node - it means it is unschedulable but pods can still be scheduled to the node if we find the taint and apply the tolerant on your 
+manifest file that matches . The master node in kubernetes is tainted. 
+
+-----------------------------------
+6. How do connect database to an application in a manifest file 
+----------------------------------
+    Hostname in the application needs to point to service name in database (statefull application)
+	Password and username are the same --> we get this from configmap and secret.
