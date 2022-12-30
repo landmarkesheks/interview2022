@@ -1,1 +1,27 @@
+-----------------------------------------------------------------------------------------------------------------------------
+- Have you done any work with monitoring tools like Grafana, Prometheus, Elastic Search, New Relic, Data Dog, anything working with tools 
+  and dashboard to help build monitoring solutions? Can you tell me a little bit of the work you did with that?
+-------------------------------------------------------------------------------------------------------------------------
+    I have deployed prometheus and grafana using helm chart in a kubernetes clusters like  
+     -- Prometheus and Grafana = APM
+            and this comes with
+            kube state metrics - which collect/scraps data from pod/deployment
+            node exporter -which collect/scrapes data from memory, cpu/disk
+            Alert manager -in charge alert us when something goes wrong
+            grafana- visualisation
+    --  EFK/ELK - LogMGT and data Analytics
+        I have also deployed elastic search, file beat and kibana using helm in a kubernetes clusters like       
+            .File beat collects data from the log files and sends it to logstash.
+            .Logstash enhances the data and sends it to elastic search.
+            .Elastic search stores and indexes the data.
+            .Kibana displays the data stored in elastic search
+            
+            
+  ---------------------------
+What are your KPI meterics?
+---------------------------
 
+    1. Keep the failure rate for application changes and releases deployed into production as low as possible.
+    2. Ensuring that Service-level agreements (SLA) for our applications meet a high goal of availability. Services should be online as much as possible, 
+       which creates uptime goals as high as 99.999%, we achieve this by continous monitoring 
+    3. Ensuring continous security in our environment
