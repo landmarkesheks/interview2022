@@ -3,7 +3,7 @@
 - what is the difference between task and handlers in ansible
 ------------------------------------------------------
 Task are executed by default from top to bottom. some task has to notify handlers
-Handlers will be executedf only if task changes
+Handlers will be executed if only if task changes
 ------------------------------------------------
 - how do we deploy to a 1000 servers with ansble
 -------------------------------------------------
