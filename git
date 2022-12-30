@@ -42,3 +42,20 @@ Automate builds using build triggers.
 
         Jenkins Server url =  http://13.52.240.58:8080/
         GitHub-webhook     =  http://13.52.240.58:8080/github-webhook/   
+        
+        
+-------------------------------------------
+- How have you used github in your environment?
+-------------------------------------------
+    Yes, we use github in our environment to store our repo and for collaboration. I have used github to
+
+    1.CREATE ORGANISATIONS WHERE APPLICABLE 
+    2.CREATE REPOSITORIES IN GITHUB 
+    3.CREATE TEAMS IN Github AND ASSIGN MEMBERS to teams 
+    4.GRANT REPO ACCESS/PERMISSION TO THE TEAM AND ENSURING THEY GET PERMISSIONS FOR WHAT THEY NEED TO CARRYOUT THEIR JOB ONLY
+-------------------------------------
+- How do you manage secrets in github? ----
+--------------------------------------
+    we manage secret in github by passing credentials using secret in github and inputing the value and then using 
+    it in our repo as environmental variable.
+    
