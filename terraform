@@ -1,6 +1,6 @@
 
 ------------------------------------------	
-7. How do you store statefile in terraform ?
+- How do you store statefile in terraform ?
 ----------------------------------------
 we use s3 bucket to store statefile because it is distributed so we can collaborate and we configure dynamo db table to lock our bucket , 
 so that only on person can run terraform apply at a time, so that we can mentain the integrity of our statefile. 
