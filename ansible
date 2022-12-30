@@ -1,14 +1,14 @@
 
 ---------------------------------------------
-9. what is the difference between task and handlers in ansible
+- what is the difference between task and handlers in ansible
 ------------------------------------------------------
 Task are executed by default from top to bottom. some task has to notify handlers
 Handlers will be executedf only if task changes
 ------------------------------------------------
-10. how do we deploy to a 1000 servers with ansble
+- how do we deploy to a 1000 servers with ansble
 -------------------------------------------------
 a. we Create a server with a key and configure ansible with that server then create an AMI of the server 
-and then spin off a 1000 servers that way all the servers will have everthing installed and ansible will be able to communicate with the server
-by using host file or dynamic host.
+    and then spin off a 1000 servers that way all the servers will have everthing installed and ansible will be able to communicate with the server
+    by using host file or dynamic host.
 b. we can also use dynamic and the create ansible user in those host and deploy ssh key. we can achieve this a playbook
------------------------------------------------------------------
+
