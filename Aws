@@ -1,0 +1,11 @@
+-----------------------------
+- What AWS have you used
+-------------------------------
+  a. IAM -------create user and role and attach to policy to it. This grants least privileges (security)
+  b. Storage -- s3 buket, Ebs volume, EFS 
+  C. VPC -- ec2, private subnet and public, security group 
+  d. Autoscaling --in our cluster to scale our node
+  e. Load balancer -- to route traffic
+  f. route53 -- create DNS name pointing to our load balancer
+  e. EKS -- to deploy our cluster
+  g. Ami -- amazon machine image ( template of the root volume)
