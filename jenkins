@@ -30,3 +30,9 @@
           and making use of jenkins library in our pipeline
     CD =  pipeline for deploying our application into kubernetes cluster ( kubectl apply -f by importing kubeconfig file in our jenkins server)
     CM =  pipeline for deploying monitoring like prometheus and grafana using helm chart 
+------------------------------------------
+Explain how you built a multi branch pipeline.
+---------------------------------------------
+      multi branch pipeline Creates a set of Pipeline projects according to detected branches in one SCM repository. 
+      we first of all create our branches like dev, uat, prod in github and then create jenkins job by selecting  multi branching pipeline
+      then we add the branching source and then add our credentials and save
