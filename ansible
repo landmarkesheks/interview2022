@@ -12,3 +12,7 @@ a. we Create a server with a key and configure ansible with that server then cre
     by using host file or dynamic host.
 b. we can also use dynamic and the create ansible user in those host and deploy ssh key. we can achieve this a playbook
 
+------------------------------------------------------------
+- How do you secure your credentials in your environment ?
+------------------------------------------------------
+AWS Secret manager and Hachicorp vault
