@@ -58,3 +58,10 @@ manifest file that matches . The master node in kubernetes is tainted.
 ----------------------------------
     Hostname in the application needs to point to service name in database (statefull application)
 	Password and username are the same --> we get this from configmap and secret.
+	
+-----------------------------------------------------------------
+11. Aws RDS service like mysql 
+------------------------------------------------------------------
+we can connect using external name service from our cluster instead of PV and PVC
+---------------------------------------------------
+
