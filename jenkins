@@ -17,3 +17,16 @@
     Shifting left requires two key DevOps practices: continuous testing and continuous deployment. Continuous testing involves automating tests 
     and running those tests as early and often as possible, Continuous deployment automates the provisioning and deployment of new builds, 
     enabling continuous testing to happen quickly and efficiently.
+    
+  -----------------------------------------------------------------------------------------------------
+- Have you spent anytime building CI/CD pipelines and if so, what is the most complex one you have built?
+-----------------------------------------------------------------------------------------------------
+    one of my complex pipeline was when I created a pipeline for
+    CP =  continous provisioning of our infrastructure using terraform
+    CI =  Continous integration using 
+          maven for validation, compilation, test and package.
+          sonaqube for code quality 
+          nexus to backup our artifact 
+          and making use of jenkins library in our pipeline
+    CD =  pipeline for deploying our application into kubernetes cluster ( kubectl apply -f by importing kubeconfig file in our jenkins server)
+    CM =  pipeline for deploying monitoring like prometheus and grafana using helm chart 
