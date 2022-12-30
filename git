@@ -1,1 +1,44 @@
 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+- In git, you can automate certain actions when the code merge or happens or when there is a push to origin. There are 3 types of triggers or hook?
+----------------------------------------------------------------------------------------------------------------------------------------------
+Automate builds using build triggers.                  
+=====================================
+    1. Timer [cronjob ] = build periodically  :
+         run this job every mid night [database backup]  
+         run this job every 2am [database backup] 
+       Started by timer
+
+    2. Changes in SCM via poll SCM  :
+         * * * * * Every minute Jenkins will check for changes in the src to trigger a build  
+         H * * * * Every hour Jenkins will check for changes in the src to trigger a build
+         Software builds 
+         application build and Deployment
+         Started by an SCM change
+
+    3. Changes in SCM via GitHub-webhook 
+         GitHub will notify Jenkins to trigger a build once there is a change in the scm [src]  
+
+        Jenkins Server url =  http://13.52.240.58:8080/
+        GitHub-webhook     =  http://13.52.240.58:8080/github-webhook/   
+
+         Software builds 
+         application build and Deployment
+         Started by GitHub push by legah2045 
+
+         api call  
+
+    4. Build other projects  
+         Upstrean project  
+           1. build & release  
+
+           2. Downstream project 
+                 deploy2Tomcat
+-----------------------------------------------------------------------------------------------------
+- Do you know what those triggers are? That will allow you to execute scripts when code is merged?
+-------------------------------------------------------------------------------------------------
+    1. Changes in SCM via GitHub-webhook 
+         GitHub will notify Jenkins to trigger a build once there is a change in the scm [src]  
+
+        Jenkins Server url =  http://13.52.240.58:8080/
+        GitHub-webhook     =  http://13.52.240.58:8080/github-webhook/   
