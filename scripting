@@ -1,0 +1,24 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+- Scripting or programming skills, have you done any work with Java, Python, Bash shell scripting or Pearl, any type of scripting language or light programming? 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+    YES Bash shell script
+    
+------------------------------------------------------------------------------------------------------------------------------------------    
+- Tell me about a time you had to write a script, you had a problem, you needed to find a solution, you wrote a script to solve the problem? 
+  What was that situation and the script you wrote?
+--------------------------------------------------------------------------------------------------------------------------------
+    some years ago before we started using new relic for monitoring our monolitic application, I created a script that monitors resources in our server
+    using bash shell scripting
+    
+    --Bash script
+    THRESHOLD=85
+    df -H | grep -vE '^Filesystem|tmpfs|cdrom' | awk '{ print $5 " " $1 }' | while read output;
+    do
+      echo $output
+      usep=$(echo $output | awk '{ print $1}' | cut -d'%' -f1  )
+      partition=$(echo $output | awk '{ print $2 }' )
+      if [ $usep -ge $THRESHOLD ]; then
+        echo "Running out of memory space \"$partition ($usep%)\" on $(hostname) as on $(date)" |
+         mail -s "Alert: Almost out of disk space $usep%" mylandmarktech@gmail.com
+      fi
+    done
