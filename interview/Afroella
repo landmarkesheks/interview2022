@@ -75,12 +75,13 @@ Automate builds using build triggers.
 -----------------------------------------------------------------------------------------------------
 - Have you spent anytime building CI/CD pipelines and if so, what is the most complex one you have built?
 -----------------------------------------------------------------------------------------------------
-    one of my cpomplex pipeline was when I have created a pipeline for
+    one of my complex pipeline was when I created a pipeline for
     CP =  continous provisioning of our infrastructure using terraform
     CI =  Continous integration using 
           maven for validation, compilation, test and package.
-          sonaqube for code quality
-          nexus to backup our artifact
+          sonaqube for code quality 
+          nexus to backup our artifact 
+          and making use of jenkins library in our pipeline
     CD =  pipeline for deploying our application into kubernetes cluster ( kubectl apply -f by importing kubeconfig file in our jenkins server)
     CM =  pipeline for deploying monitoring like prometheus and grafana using helm chart 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -109,10 +110,41 @@ Automate builds using build triggers.
     done
 -----------------------------------------------------------------------------------------------------------------------------
 - Have you done any work with monitoring tools like Grafana, Prometheus, Elastic Search, New Relic, Data Dog, anything working with tools 
-  and dashboard to help build monitoring solutions?
+  and dashboard to help build monitoring solutions? Can you tell me a little bit of the work you did with that?
 -------------------------------------------------------------------------------------------------------------------------
-Can you tell me a little bit of the work you did with that?
-Tell me the github workflows and events?
-How have you used github in your environment?
-How do tou manage secrets in github?
-What are your KPI meterics
+    I have deployed prometheus and grafana using helm chart in a kubernetes clusters like  
+     -- Prometheus and Grafana = APM
+            and this comes with
+            kube state metrics - which collect/scraps data from pod/deployment
+            node exporter -which collect/scrapes data from memory, cpu/disk
+            Alert manager -in charge alert us when something goes wrong
+            grafana- visualisation
+    --  EFK/ELK - LogMGT and data Analytics
+        I have also deployed elastic search, file beat and kibana using helm in a kubernetes clusters like       
+            .File beat collects data from the log files and sends it to logstash.
+            .Logstash enhances the data and sends it to elastic search.
+            .Elastic search stores and indexes the data.
+            .Kibana displays the data stored in elastic search
+-------------------------------------------
+- How have you used github in your environment?
+-------------------------------------------
+    Yes, we use github in our environment to store our repo and for collaboration. I have used github to
+
+    1.CREATE ORGANISATIONS WHERE APPLICABLE 
+    2.CREATE REPOSITORIES IN GITHUB 
+    3.CREATE TEAMS IN Github AND ASSIGN MEMBERS to teams 
+    4.GRANT REPO ACCESS/PERMISSION TO THE TEAM AND ENSURING THEY GET PERMISSIONS FOR WHAT THEY NEED TO CARRYOUT THEIR JOB ONLY
+-------------------------------------
+- How do you manage secrets in github? ----
+--------------------------------------
+    we manage secret in github by passing credentials using secret in github and inputing the value and then using 
+    it in our repo as environmental variable.
+    
+---------------------------
+What are your KPI meterics?
+---------------------------
+
+    1. Keep the failure rate for application changes and releases deployed into production as low as possible.
+    2. Ensuring that Service-level agreements (SLA) for our applications meet a high goal of availability. Services should be online as much as possible, 
+       which creates uptime goals as high as 99.999%, we achieve this by continous monitoring 
+    3. Ensuring continous security in our environment
