@@ -1,1 +1,19 @@
 
+------------------------------------------------------------------------------------------------------------------------------------------------
+- We often hear about CI/CD. When someone talks about Continuous Integration, what does that mean to you and how do you define the term to people?
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+    1. CI is nothing but a software development practice where members of each team integrate their work daily using automation, they can test it every day and it 
+    reduces the problems because it can identify the problems earlier, so they can be fixed.. This will enable us to develop product that is  more stable. 
+
+    2. CD (Continuous deployment) automatically deploys every successful CI build directly into production without any manual steps. 
+
+-----------------------------------------------------------------------------------------------------------
+- In DevOps, there is a concept called shift left to reduce failures. Do you know what that concept means?
+------------------------------------------------------------------------------------------------------------
+
+    The term “shift left” refers to a practice in software development in which teams focus on quality, work on problem prevention instead of detection, 
+    and begin testing earlier than ever before. 
+    Shifting left requires two key DevOps practices: continuous testing and continuous deployment. Continuous testing involves automating tests 
+    and running those tests as early and often as possible, Continuous deployment automates the provisioning and deployment of new builds, 
+    enabling continuous testing to happen quickly and efficiently.
